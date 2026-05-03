@@ -41,54 +41,45 @@
         .hero-info { margin: 20px 0 28px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
         .hero-info span { font-size: 0.88rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 7px; }
         .hero-info span i { color: var(--amarillo); }
-        
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn-cta { display: inline-block; background: var(--rojo); color: white; text-decoration: none; padding: 14px 38px; border-radius: 4px; font-family: var(--fuente-titulo); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: background 0.3s, transform 0.2s; cursor: pointer; }
-        .btn-cta:hover { background: #a93226; transform: translateY(-2px); }
-        .btn-cta.secundario { background: transparent; border: 2px solid white; }
-        .btn-cta.secundario:hover { background: white; color: black; }
+        .hero-social { margin-bottom: 28px; }
+        .hero-social a { color: white; font-size: 1.9rem; margin: 0 14px; transition: color 0.3s, transform 0.3s; display: inline-block; }
+        .btn-cta { display: inline-block; background: var(--rojo); color: white; text-decoration: none; padding: 14px 38px; border-radius: 4px; font-family: var(--fuente-titulo); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: background 0.3s; }
 
-        /* ── ESPECIALIDADES ── */
+        .divider { width: 100%; height: 5px; background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--rojo)); }
+
         .especialidades-section { padding: 50px 20px; max-width: 1100px; margin: auto; text-align: center; }
         .especialidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
         .especialidad-card { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 3/4; }
         .especialidad-card img { width: 100%; height: 100%; object-fit: cover; }
         .especialidad-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); padding: 30px 14px 14px; font-family: var(--fuente-titulo); font-size: 1.3rem; color: white; }
 
-        /* ── MENÚ Y FILTROS ── */
-        .menu-filter-bar { position: sticky; top: 58px; z-index: 90; background: var(--carbon); border-bottom: 2px solid var(--rojo); padding: 14px 20px; display: flex; justify-content: center; }
-        .menu-select { background: var(--carbon-medio); color: white; border: 1px solid var(--rojo); padding: 10px; border-radius: 4px; min-width: 220px; }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
-        .menu-item { background: var(--carbon-medio); padding: 22px; border-radius: 6px; border-left: 4px solid var(--rojo); }
-        .menu-item.hidden { display: none; }
-        .precio-wrap { color: var(--amarillo); font-weight: 700; font-size: 1.4rem; text-align: right; }
-
-        /* ── RETOS ── */
-        .retos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
-        .reto-card { background: var(--carbon-medio); border-radius: 6px; border-top: 4px solid var(--rojo); padding: 25px; }
-
         .section-title { text-align: center; padding: 50px 20px 10px; }
         .section-title h2 { font-family: var(--fuente-titulo); font-size: clamp(2.5rem, 6vw, 4rem); color: white; margin: 0; letter-spacing: 4px; }
         .section-title h2 span { color: var(--amarillo); }
 
-        .divider { width: 100%; height: 5px; background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--rojo)); }
+        .menu-filter-bar { position: sticky; top: 58px; z-index: 90; background: var(--carbon); border-bottom: 2px solid var(--rojo); padding: 14px 20px; display: flex; justify-content: center; }
+        .menu-select { background: var(--carbon-medio); color: white; border: 1px solid var(--rojo); padding: 10px; border-radius: 4px; min-width: 220px; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
+        .menu-item { background: var(--carbon-medio); padding: 22px; border-radius: 6px; border-left: 4px solid var(--rojo); }
+        .menu-item.hidden { display: none; }
+        .menu-item h3 { margin: 0; font-family: var(--fuente-titulo); font-size: 1.5rem; }
+        .precio-wrap { color: var(--amarillo); font-weight: 700; font-size: 1.4rem; text-align: right; }
+
+        .retos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
+        .reto-card { background: var(--carbon-medio); border-radius: 6px; border-top: 4px solid var(--rojo); padding: 25px; }
 
         .sucursales-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; padding: 20px; max-width: 1100px; margin: auto; }
         .sucursal-card { background: var(--carbon-medio); border-radius: 8px; overflow: hidden; }
         iframe { width: 100%; height: 250px; border: 0; }
 
-        footer { background: var(--carbon); text-align: center; padding: 50px 20px; border-top: 2px solid var(--rojo); }
-
-        /* ── BOTONES FLOTANTES ── */
-        .float-btns { position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
-        .wa-float, .call-float { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: transform 0.2s; }
-        .wa-float { background: #25D366; }
-        .call-float { background: var(--rojo); }
+        footer { background: var(--carbon); text-align: center; padding: 40px; border-top: 2px solid var(--rojo); }
+        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; }
 
         @media (max-width: 640px) {
             nav { padding: 10px; }
             .nav-links { gap: 10px; }
-            .hero-btns { flex-direction: column; width: 85%; margin: 0 auto; }
+            .sucursales-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -113,92 +104,70 @@
             <span><i class="fas fa-map-marker-alt"></i> Guadalajara</span>
             <span><i class="fas fa-clock"></i> 4pm - 2am</span>
         </div>
-        <!-- BOTONES HERO -->
-        <div class="hero-btns">
-            <a href="#menu" class="btn-cta">Ver Menú</a>
-            <a href="tel:3336173874" class="btn-cta secundario"><i class="fas fa-phone-alt"></i> Llamar ahora</a>
-        </div>
+        <a href="#menu" class="btn-cta">Ver Menú</a>
     </div>
 </div>
 
-<div class="divider"></div>
-
-<section class="especialidades-section">
-    <div class="section-title"><h2>NUESTRAS <span>ESPECIALIDADES</span></h2></div>
-    <div class="especialidades-grid">
-        <div class="especialidad-card"><img src="pizza-pastor.png"><div class="especialidad-label">Pizza de Pastor</div></div>
-        <div class="especialidad-card"><img src="pizza-mamalona.png"><div class="especialidad-label">Pizza Mamalona</div></div>
-        <div class="especialidad-card"><img src="burrito-chakalon.png"><div class="especialidad-label">Burrito Chakalon</div></div>
-        <div class="especialidad-card"><img src="burrito.png"><div class="especialidad-label">Burrito Clasico</div></div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
 <section id="menu">
-    <div class="section-title"><h2>NUESTRO <span>MENÚ</span></h2></div>
+    <div class="section-title">
+        <h2>NUESTRO <span>MENÚ</span></h2>
+    </div>
     <div class="menu-filter-bar">
         <select class="menu-select" id="menu-filter">
             <option value="todos">Todo el Menú</option>
         </select>
     </div>
-    <div id="lista-menu" class="menu-grid"></div>
+    <div id="lista-menu" class="menu-grid">
+        <!-- JS cargará esto -->
+    </div>
 </section>
-
-<div class="divider"></div>
 
 <section id="retos">
     <div class="section-title"><h2>LOS <span>RETOS</span></h2></div>
     <div id="lista-retos" class="retos-grid"></div>
 </section>
 
-<div class="divider"></div>
-
 <section id="sucursales">
     <div class="section-title"><h2>NUESTRAS <span>SUCURSALES</span></h2></div>
     <div class="sucursales-grid">
         <div class="sucursal-card">
-            <div style="padding: 15px;"><h3>Revolución</h3></div>
+            <div style="padding: 15px;"><h3>Sucursal Revolución</h3></div>
             <iframe src="https://maps.google.com/maps?q=Calz.+Revolucion+1023,+Guadalajara&output=embed"></iframe>
         </div>
         <div class="sucursal-card">
-            <div style="padding: 15px;"><h3>Marcelino</h3></div>
+            <div style="padding: 15px;"><h3>Sucursal Marcelino</h3></div>
             <iframe src="https://maps.google.com/maps?q=Blvd+Marcelino+Garcia+Barragan+1291,+Guadalajara&output=embed"></iframe>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="footer-logo">YOGI <span>BEAR</span></div>
-    <!-- BOTÓN FOOTER -->
-    <div style="margin: 20px 0;">
-        <a href="tel:3336173874" class="btn-cta"><i class="fas fa-phone-alt"></i> 33 3617 3874</a>
-    </div>
-    <p style="opacity:0.4; font-size: 0.8rem;">© 2026 Yogi Bear – Pizzería & Taquería</p>
-</footer>
-
-<div class="float-btns">
-    <a href="tel:3336173874" class="call-float"><i class="fas fa-phone-alt"></i></a>
-    <a href="https://wa.me/523328081268" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-</div>
+<a href="https://wa.me/523328081268" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
     const MENU_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTXZljNHUvsu37ouRUe3AqCqVpDClZVo_huXolQeUwKkh3pBz8u-TaZxCnLirH4WrOJAvY9siGsC-zZ/pub?output=csv';
     const RETOS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT84zmu_VELP8ZmNyoA8McdIrq83ig9Q_nAEtxsCwzzjYKE5J0GHdQiZ9HY1BXYe8y2vmJ9-T36FI_x/pub?output=csv';
 
+    // Función mágica para el QR: Espera y scrollea
     function scrollAlMenuConRetraso() {
         if (window.location.hash === '#menu') {
             const checkExist = setInterval(function() {
                 const element = document.getElementById('menu');
                 const items = document.querySelectorAll('.menu-item');
+                // Si el menú existe y ya tiene al menos un platillo cargado
                 if (element && items.length > 0) {
                     clearInterval(checkExist);
                     setTimeout(() => {
                         const offset = 80;
-                        window.scrollTo({ top: element.offsetTop - offset, behavior: 'smooth' });
-                    }, 300);
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = element.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        window.scrollTo({
+                            top: elementPosition - offset,
+                            behavior: 'smooth'
+                        });
+                    }, 300); // Un pequeño respiro para el render
                 }
-            }, 100);
+            }, 100); // Revisa cada 100ms
         }
     }
 
@@ -210,21 +179,33 @@
             const container = document.getElementById('lista-menu');
             const select = document.getElementById('menu-filter');
             const cats = new Set();
+            
             container.innerHTML = '';
             for (let i = 1; i < lines.length; i++) {
                 const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                 if (cols.length >= 3) {
-                    const cat = cols[3] ? cols[3].replace(/"/g, "").trim() : "Otros";
+                    const cat = cols[3] ? cols[3].replace(/"/g, "").trim() : "Varios";
                     cats.add(cat);
-                    container.innerHTML += `<div class="menu-item" data-cat="${cat.toLowerCase()}"><span style="color:var(--amarillo);font-size:11px;font-weight:bold;text-transform:uppercase;">${cat}</span><h3>${cols[0].replace(/"/g, "")}</h3><p>${cols[1].replace(/"/g, "")}</p><div class="precio-wrap">$${cols[2].replace(/"/g, "")}</div></div>`;
+                    container.innerHTML += `
+                        <div class="menu-item" data-cat="${cat.toLowerCase()}">
+                            <span style="color:var(--amarillo); font-size:10px;">${cat}</span>
+                            <h3>${cols[0].replace(/"/g, "")}</h3>
+                            <p>${cols[1].replace(/"/g, "")}</p>
+                            <div class="precio-wrap">$${cols[2].replace(/"/g, "")}</div>
+                        </div>`;
                 }
             }
-            cats.forEach(c => { const o = document.createElement('option'); o.value = c.toLowerCase(); o.textContent = c; select.appendChild(o); });
+            cats.forEach(c => {
+                const o = document.createElement('option');
+                o.value = c.toLowerCase(); o.textContent = c;
+                select.appendChild(o);
+            });
             select.addEventListener('change', e => {
                 document.querySelectorAll('.menu-item').forEach(it => {
                     it.classList.toggle('hidden', e.target.value !== 'todos' && it.dataset.cat !== e.target.value);
                 });
             });
+            // Una vez cargado, ejecutamos el scroll si venimos del QR
             scrollAlMenuConRetraso();
         } catch (e) { console.error(e); }
     }
@@ -237,8 +218,8 @@
             const container = document.getElementById('lista-retos');
             for (let i = 1; i < lines.length; i++) {
                 const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-                if (cols.length >= 4) {
-                    container.innerHTML += `<div class="reto-card"><h3>${cols[0].replace(/"/g, "")}</h3><p>Tiempo: ${cols[1]}</p><p>Premio: ${cols[3]}</p></div>`;
+                if (cols.length >= 1) {
+                    container.innerHTML += `<div class="reto-card"><h3>${cols[0]}</h3><p>Tiempo: ${cols[1]}</p><p>Premio: ${cols[3]}</p></div>`;
                 }
             }
         } catch (e) { console.error(e); }
@@ -246,6 +227,8 @@
 
     loadMenu();
     loadRetos();
+    
+    // Escuchar si el usuario cambia el hash manualmente
     window.addEventListener('hashchange', scrollAlMenuConRetraso);
 </script>
 </body>
