@@ -45,8 +45,13 @@
         .hero-social { margin-bottom: 28px; }
         .hero-social a { color: white; font-size: 1.9rem; margin: 0 14px; transition: color 0.3s, transform 0.3s; display: inline-block; }
         .hero-social a:hover { color: var(--amarillo); transform: translateY(-3px); }
-        .btn-cta { display: inline-block; background: var(--rojo); color: white; text-decoration: none; padding: 14px 38px; border-radius: 4px; font-family: var(--fuente-titulo); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: background 0.3s, transform 0.2s; }
+        
+        /* Contenedor para botones en Hero */
+        .hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-cta { display: inline-block; background: var(--rojo); color: white; text-decoration: none; padding: 14px 38px; border-radius: 4px; font-family: var(--fuente-titulo); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: background 0.3s, transform 0.2s; border: none; cursor: pointer; }
         .btn-cta:hover { background: #a93226; transform: translateY(-2px); }
+        .btn-secondary { background: transparent; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: black; }
 
         /* ── DIVISOR ── */
         .divider { width: 100%; height: 5px; background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--rojo)); }
@@ -69,37 +74,8 @@
         .section-title p { color: rgba(255,255,255,0.4); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
 
         /* ── DROPDOWN FILTRO STICKY ── */
-        .menu-filter-bar {
-            position: sticky;
-            top: 58px;
-            z-index: 90;
-            background: var(--carbon);
-            border-bottom: 2px solid var(--rojo);
-            padding: 14px 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .menu-select {
-            background: var(--carbon-medio);
-            color: white;
-            border: 1px solid var(--rojo);
-            border-radius: 4px;
-            padding: 10px 40px 10px 18px;
-            font-family: var(--fuente-cuerpo);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            min-width: 220px;
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F39C12' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-        }
-
+        .menu-filter-bar { position: sticky; top: 58px; z-index: 90; background: var(--carbon); border-bottom: 2px solid var(--rojo); padding: 14px 20px; display: flex; justify-content: center; }
+        .menu-select { background: var(--carbon-medio); color: white; border: 1px solid var(--rojo); border-radius: 4px; padding: 10px 40px 10px 18px; font-family: var(--fuente-cuerpo); font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; min-width: 220px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F39C12' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
         .menu-select:focus { outline: none; border-color: var(--amarillo); }
         .menu-select option { background: #1a1a1a; color: white; text-transform: uppercase; }
 
@@ -162,7 +138,7 @@
             .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
             .sucursales-grid { grid-template-columns: 1fr; }
             .menu-filter-bar { top: 54px; gap: 8px; }
-
+            .hero-actions { flex-direction: column; width: 80%; margin: 0 auto; }
         }
     </style>
 </head>
@@ -195,7 +171,10 @@
             <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
-        <a href="#menu" class="btn-cta">Ver Menú</a>
+        <div class="hero-actions">
+            <a href="#menu" class="btn-cta">Ver Menú</a>
+            <a href="tel:3336173874" class="btn-cta btn-secondary"><i class="fas fa-phone-alt"></i> Llamar</a>
+        </div>
     </div>
 </div>
 
@@ -234,7 +213,6 @@
         <p>Tacos · Pizzas · Burritos · Crepas · Hamburguesas</p>
     </div>
 
-    <!-- FILTRO DROPDOWN STICKY -->
     <div class="menu-filter-bar">
         <select class="menu-select" id="menu-filter">
             <option value="todos">Todo el Menú</option>
@@ -265,33 +243,24 @@
     </div>
     <div class="sucursales-section">
         <div class="sucursales-grid">
-
             <div class="sucursal-card">
                 <div class="sucursal-header">
                     <h3>Calzada Revolución</h3>
                     <p><i class="fas fa-map-marker-alt"></i>Calz. Revolución 1023, Analco, 44400 Guadalajara, Jal.</p>
                 </div>
                 <div class="sucursal-map">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Calz.+Revolucion+1023,+Analco,+44400+Guadalajara,+Jalisco&output=embed&z=17"
-                        allowfullscreen="" loading="lazy">
-                    </iframe>
+                    <iframe src="https://maps.google.com/maps?q=Calz.+Revolucion+1023,+Analco,+44400+Guadalajara,+Jalisco&output=embed&z=17" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
             <div class="sucursal-card">
                 <div class="sucursal-header">
                     <h3>Marcelino García</h3>
                     <p><i class="fas fa-map-marker-alt"></i>Blvd. Gral. Marcelino García Barragán 1291, Unidad Modelo, 44420 Guadalajara, Jal.</p>
                 </div>
                 <div class="sucursal-map">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Blvd+Marcelino+Garcia+Barragan+1291,+Unidad+Modelo,+44420+Guadalajara,+Jalisco&output=embed&z=17"
-                        allowfullscreen="" loading="lazy">
-                    </iframe>
+                    <iframe src="https://maps.google.com/maps?q=Blvd+Marcelino+Garcia+Barragan+1291,+Unidad+Modelo,+44420+Guadalajara,+Jalisco&output=embed&z=17" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -304,39 +273,36 @@
         <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
+    <!-- Botón de llamada en footer -->
+    <div style="margin-bottom: 20px;">
+        <a href="tel:3336173874" class="btn-cta"><i class="fas fa-phone-alt"></i> 33 3617 3874</a>
+    </div>
     <p>© 2026 Yogi Bear – Pizzería & Taquería</p>
     <p>Guadalajara, Jalisco · 4 pm a 2 am · Cerrado los Martes</p>
 </footer>
 
-<!-- WA FLOTANTE -->
-<a href="https://wa.me/523328081268" class="wa-float" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<!-- BOTONES FLOTANTES -->
+<div class="float-btns">
+    <a href="tel:3336173874" class="call-float" aria-label="Llamar"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://wa.me/523328081268" class="wa-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
 
 <script>
-    // ── VIDEO: forzar reproducción en móvil ──
+    // VIDEO
     const video = document.getElementById('video-background');
     if (video) {
         video.muted = true;
         video.defaultMuted = true;
         video.setAttribute('muted', '');
         video.setAttribute('playsinline', '');
-
-        const tryPlay = () => {
-            video.muted = true;
-            const p = video.play();
-            if (p !== undefined) p.catch(() => {});
-        };
-
+        const tryPlay = () => { video.muted = true; const p = video.play(); if (p !== undefined) p.catch(() => {}); };
         tryPlay();
         setTimeout(tryPlay, 500);
-        setTimeout(tryPlay, 1500);
         window.addEventListener('scroll', tryPlay, { once: true });
     }
 
-    // ── MENÚ ──
+    // MENÚ
     const MENU_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTXZljNHUvsu37ouRUe3AqCqVpDClZVo_huXolQeUwKkh3pBz8u-TaZxCnLirH4WrOJAvY9siGsC-zZ/pub?output=csv';
-
     async function loadMenu() {
         try {
             const res = await fetch(MENU_URL + '&cache=' + Math.random());
@@ -344,40 +310,26 @@
             const lines = data.split(/\r?\n/);
             const container = document.getElementById('lista-menu');
             container.innerHTML = '';
-
             for (let i = 1; i < lines.length; i++) {
                 if (!lines[i].trim()) continue;
                 const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                 if (cols.length >= 3) {
-                    const name     = cols[0].replace(/"/g, "").trim();
-                    const desc     = cols[1].replace(/"/g, "").trim();
-                    const price    = cols[2].replace(/"/g, "").trim();
+                    const name = cols[0].replace(/"/g, "").trim();
+                    const desc = cols[1].replace(/"/g, "").trim();
+                    const price = cols[2].replace(/"/g, "").trim();
                     const category = cols[3] ? cols[3].replace(/"/g, "").trim() : "Menú";
-
-                    container.innerHTML += `
-                        <div class="menu-item" data-cat="${category.toLowerCase()}">
-                            <span class="categoria">${category}</span>
-                            <h3>${name}</h3>
-                            <p>${desc}</p>
-                            <div class="precio-wrap"><span>$${price}</span></div>
-                        </div>`;
+                    container.innerHTML += `<div class="menu-item" data-cat="${category.toLowerCase()}"><span class="categoria">${category}</span><h3>${name}</h3><p>${desc}</p><div class="precio-wrap"><span>$${price}</span></div></div>`;
                 }
             }
-
             setupFilter();
-        } catch (e) { console.error("Error cargando menú:", e); }
+        } catch (e) { console.error(e); }
     }
 
-    // ── FILTRO DROPDOWN (se auto-popula con categorías del sheet) ──
     function setupFilter() {
         const select = document.getElementById('menu-filter');
         const items = document.querySelectorAll('.menu-item');
-
-        // Recopilar categorías únicas del sheet
         const cats = new Set();
         items.forEach(item => cats.add(item.dataset.cat));
-
-        // Agregar opciones dinámicamente
         cats.forEach(cat => {
             if (!cat) return;
             const opt = document.createElement('option');
@@ -385,23 +337,16 @@
             opt.textContent = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
             select.appendChild(opt);
         });
-
-        // Escuchar cambio
         select.addEventListener('change', () => {
             const val = select.value;
             items.forEach(item => {
-                if (val === 'todos' || item.dataset.cat.toLowerCase() === val) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
+                item.classList.toggle('hidden', val !== 'todos' && item.dataset.cat.toLowerCase() !== val);
             });
         });
     }
 
-    // ── RETOS ──
+    // RETOS
     const RETOS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT84zmu_VELP8ZmNyoA8McdIrq83ig9Q_nAEtxsCwzzjYKE5J0GHdQiZ9HY1BXYe8y2vmJ9-T36FI_x/pub?output=csv';
-
     async function loadRetos() {
         try {
             const res = await fetch(RETOS_URL + '&cache=' + Math.random());
@@ -409,39 +354,19 @@
             const lines = data.split(/\r?\n/);
             const container = document.getElementById('lista-retos');
             container.innerHTML = '';
-
             for (let i = 1; i < lines.length; i++) {
                 if (!lines[i].trim()) continue;
                 const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                 if (cols.length >= 1) {
-                    const nombre    = cols[0].replace(/"/g, "").trim();
-                    const tiempo    = cols[1] ? cols[1].replace(/"/g, "").trim() : "—";
-                    const precio    = cols[2] ? cols[2].replace(/"/g, "").trim() : "—";
-                    const premio    = cols[3] ? cols[3].replace(/"/g, "").trim() : "—";
+                    const nombre = cols[0].replace(/"/g, "").trim();
+                    const tiempo = cols[1] ? cols[1].replace(/"/g, "").trim() : "—";
+                    const precio = cols[2] ? cols[2].replace(/"/g, "").trim() : "—";
+                    const premio = cols[3] ? cols[3].replace(/"/g, "").trim() : "—";
                     const modalidad = cols[4] ? cols[4].replace(/"/g, "").trim() : "—";
-
-                    container.innerHTML += `
-                        <div class="reto-card">
-                            <h3>${nombre}</h3>
-                            <div class="reto-info">
-                                <div class="reto-info-row">
-                                    <span class="label">⏱ Tiempo límite</span>
-                                    <span class="val amarillo">${tiempo}</span>
-                                </div>
-                                <div class="reto-info-row">
-                                    <span class="label">💸 Si pierdes</span>
-                                    <span class="val rojo">$${precio}</span>
-                                </div>
-                                <div class="reto-info-row">
-                                    <span class="label">🏆 Premio</span>
-                                    <span class="val amarillo">$${premio}</span>
-                                </div>
-                            </div>
-                            <div class="reto-modalidad">📋 ${modalidad}</div>
-                        </div>`;
+                    container.innerHTML += `<div class="reto-card"><h3>${nombre}</h3><div class="reto-info"><div class="reto-info-row"><span class="label">⏱ Tiempo</span><span class="val amarillo">${tiempo}</span></div><div class="reto-info-row"><span class="label">💸 Si pierdes</span><span class="val rojo">$${precio}</span></div><div class="reto-info-row"><span class="label">🏆 Premio</span><span class="val amarillo">$${premio}</span></div></div><div class="reto-modalidad">📋 ${modalidad}</div></div>`;
                 }
             }
-        } catch (e) { console.error("Error cargando retos:", e); }
+        } catch (e) { console.error(e); }
     }
 
     loadMenu();
