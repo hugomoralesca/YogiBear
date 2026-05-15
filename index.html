@@ -1,35 +1,24 @@
-Código Producción YogiBear 2:46 pm 14 de Mayo 2026
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogi Bear | Pizzería & Taquería</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://docs.google.com; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Yogi Bear | Pizzería &amp; Taquería</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rRoXxn2yHlrZYB587Ki9RO1tONhLdM6XfORg7Rw4uwH4/Fh/5nP7IUX91bkaKUgs" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap');
-
-        :root {
-            --rojo: #C0392B;
-            --amarillo: #F39C12;
-            --carbon: #1A1A1A;
-            --carbon-medio: #242424;
-            --fondo: #141414;
-            --texto-claro: #F0EDE8;
-            --fuente-titulo: 'Bebas Neue', sans-serif;
-            --fuente-cuerpo: 'Poppins', sans-serif;
-        }
-
+        :root { --rojo: #C0392B; --amarillo: #F39C12; --carbon: #1A1A1A; --carbon-medio: #242424; --fondo: #141414; --texto-claro: #F0EDE8; --fuente-titulo: 'Bebas Neue', sans-serif; --fuente-cuerpo: 'Poppins', sans-serif; }
         * { box-sizing: border-box; }
         body { font-family: var(--fuente-cuerpo); background-color: var(--fondo); margin: 0; color: var(--texto-claro); }
-
         nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(20,20,20,0.92); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; padding: 14px 40px; border-bottom: 2px solid var(--rojo); }
-        .nav-logo { font-family: var(--fuente-titulo); color: white; font-size: 1.8rem; letter-spacing: 3px; text-decoration: none; display: flex; align-items: center; gap: 0; padding: 0; }
+        .nav-logo { font-family: var(--fuente-titulo); color: white; font-size: 1.8rem; letter-spacing: 3px; text-decoration: none; display: flex; align-items: center; }
         .logo-letrero { height: 36px; width: auto; border-radius: 4px; }
         .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
         .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
         .nav-links a:hover { color: var(--amarillo); }
-
         .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
         #video-background { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: 0; object-fit: cover; }
         .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.58); z-index: 1; }
@@ -47,9 +36,7 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .btn-cta:hover { background: #a93226; transform: translateY(-2px); }
         .btn-secondary { background: transparent; border: 2px solid white; }
         .btn-secondary:hover { background: white; color: black; }
-
         .divider { width: 100%; height: 5px; background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--rojo)); }
-
         .especialidades-section { padding: 50px 20px; max-width: 1100px; margin: auto; text-align: center; }
         .especialidades-section h2 { font-family: var(--fuente-titulo); font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: 4px; margin: 0 0 8px; }
         .especialidades-section h2 span { color: var(--amarillo); }
@@ -59,17 +46,14 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .especialidad-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
         .especialidad-card:hover img { transform: scale(1.06); }
         .especialidad-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); padding: 30px 14px 14px; font-family: var(--fuente-titulo); font-size: 1.3rem; letter-spacing: 2px; color: white; }
-
         .section-title { text-align: center; padding: 50px 20px 10px; }
         .section-title h2 { font-family: var(--fuente-titulo); font-size: clamp(2.5rem, 6vw, 4rem); color: white; margin: 0 0 6px; letter-spacing: 4px; }
         .section-title h2 span { color: var(--amarillo); }
         .section-title p { color: rgba(255,255,255,0.4); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
-
         .menu-filter-bar { position: sticky; top: 58px; z-index: 90; background: var(--carbon); border-bottom: 2px solid var(--rojo); padding: 14px 20px; display: flex; justify-content: center; }
         .menu-select { background: var(--carbon-medio); color: white; border: 1px solid var(--rojo); border-radius: 4px; padding: 10px 40px 10px 18px; font-family: var(--fuente-cuerpo); font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; min-width: 220px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F39C12' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
         .menu-select:focus { outline: none; border-color: var(--amarillo); }
         .menu-select option { background: #1a1a1a; color: white; text-transform: uppercase; }
-
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
         .menu-item { display: flex; flex-direction: column; background: var(--carbon-medio); padding: 22px; border-radius: 6px; border-left: 4px solid var(--rojo); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
         .menu-item.hidden { display: none; }
@@ -79,7 +63,6 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .menu-item p { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.55; flex-grow: 1; margin-bottom: 18px; }
         .menu-item .precio-wrap { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px; text-align: right; }
         .menu-item .precio-wrap span { color: var(--amarillo); font-weight: 700; font-size: 1.4rem; }
-
         .retos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 30px 20px 50px; max-width: 1200px; margin: auto; }
         .reto-card { background: var(--carbon-medio); border-radius: 6px; border-top: 4px solid var(--rojo); padding: 25px; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
         .reto-card::before { content: '🔥'; position: absolute; top: 14px; right: 18px; font-size: 1.4rem; opacity: 0.6; }
@@ -92,10 +75,7 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .reto-info-row .val.amarillo { color: var(--amarillo); }
         .reto-info-row .val.rojo { color: #e74c3c; }
         .reto-modalidad { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.45); font-style: italic; }
-
-        /* ── LOADING STATE ── */
         .loading-msg { text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; padding: 40px; letter-spacing: 1px; text-transform: uppercase; }
-
         .sucursales-section { padding: 20px 20px 60px; max-width: 1100px; margin: auto; }
         .sucursales-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 30px; }
         .sucursal-card { background: var(--carbon-medio); border-radius: 8px; overflow: hidden; border-top: 4px solid var(--amarillo); }
@@ -105,7 +85,6 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .sucursal-header p i { color: var(--rojo); margin-right: 5px; }
         .sucursal-map { width: 100%; height: 300px; }
         .sucursal-map iframe { width: 100%; height: 100%; border: 0; display: block; }
-
         footer { background: var(--carbon); color: white; text-align: center; padding: 50px 20px; border-top: 2px solid var(--rojo); }
         .footer-logo { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
         .footer-logo-img { width: min(220px, 60vw); height: auto; }
@@ -113,21 +92,12 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         .footer-social a { color: rgba(255,255,255,0.55); font-size: 1.8rem; margin: 0 14px; transition: color 0.3s; }
         .footer-social a:hover { color: var(--amarillo); }
         footer p { color: rgba(255,255,255,0.35); font-size: 0.82rem; margin: 5px 0; }
-
         .float-btns { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; gap: 12px; align-items: center; }
         .wa-float { background: #25D366; color: white; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; box-shadow: 0 4px 18px rgba(37,211,102,0.5); text-decoration: none; transition: transform 0.25s; }
         .wa-float:hover { transform: scale(1.1); }
         .call-float { background: var(--rojo); color: white; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 18px rgba(192,57,43,0.5); text-decoration: none; transition: transform 0.25s; }
         .call-float:hover { transform: scale(1.1); }
-
-        @media (max-width: 640px) {
-            nav { padding: 12px 18px; }
-            .nav-links { gap: 16px; }
-            .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
-            .sucursales-grid { grid-template-columns: 1fr; }
-            .menu-filter-bar { top: 54px; }
-            .hero-actions { flex-direction: column; width: 80%; margin: 0 auto; }
-        }
+        @media (max-width: 640px) { nav { padding: 12px 18px; } .nav-links { gap: 16px; } .nav-links a { font-size: 0.75rem; letter-spacing: 1px; } .sucursales-grid { grid-template-columns: 1fr; } .menu-filter-bar { top: 54px; } .hero-actions { flex-direction: column; width: 80%; margin: 0 auto; } }
     </style>
 </head>
 <body>
@@ -153,9 +123,9 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
             <span><i class="fas fa-calendar-times"></i> Descansamos los Martes</span>
         </div>
         <div class="hero-social">
-            <a href="https://www.tiktok.com/@yogibearcam" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@yogibearcam" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="hero-actions">
             <a href="#menu" class="btn-cta">Ver Menú</a>
@@ -170,10 +140,10 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
     <h2>NUESTRAS <span>ESPECIALIDADES</span></h2>
     <p class="sub">Los favoritos de siempre</p>
     <div class="especialidades-grid">
-        <div class="especialidad-card"><img src="pizza-pastor.png" alt="Pizza de Pastor"><div class="especialidad-label">Pizza de Pastor</div></div>
-        <div class="especialidad-card"><img src="pizza-mamalona.png" alt="Pizza Mamalona"><div class="especialidad-label">Pizza Mamalona</div></div>
-        <div class="especialidad-card"><img src="burrito-chakalon.png" alt="Burrito Chakalon"><div class="especialidad-label">Burrito Chakalon</div></div>
-        <div class="especialidad-card"><img src="burrito.png" alt="Burrito"><div class="especialidad-label">Burrito</div></div>
+        <div class="especialidad-card"><img src="pizza-pastor.png" alt="Pizza de Pastor" loading="lazy"><div class="especialidad-label">Pizza de Pastor</div></div>
+        <div class="especialidad-card"><img src="pizza-mamalona.png" alt="Pizza Mamalona" loading="lazy"><div class="especialidad-label">Pizza Mamalona</div></div>
+        <div class="especialidad-card"><img src="burrito-chakalon.png" alt="Burrito Chakalon" loading="lazy"><div class="especialidad-label">Burrito Chakalon</div></div>
+        <div class="especialidad-card"><img src="burrito.png" alt="Burrito" loading="lazy"><div class="especialidad-label">Burrito</div></div>
     </div>
 </section>
 
@@ -202,11 +172,11 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
         <div class="sucursales-grid">
             <div class="sucursal-card">
                 <div class="sucursal-header"><h3>Calzada Revolución</h3><p><i class="fas fa-map-marker-alt"></i>Calz. Revolución 1023, Guadalajara.</p></div>
-                <div class="sucursal-map"><iframe src="https://maps.google.com/maps?q=Calz.+Revolucion+1023,+Analco,+Guadalajara&output=embed&z=17" allowfullscreen loading="lazy"></iframe></div>
+                <div class="sucursal-map"><iframe src="https://maps.google.com/maps?q=Calz.+Revolucion+1023,+Analco,+Guadalajara&output=embed&z=17" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin" title="Mapa sucursal Calzada Revolución"></iframe></div>
             </div>
             <div class="sucursal-card">
                 <div class="sucursal-header"><h3>Marcelino García</h3><p><i class="fas fa-map-marker-alt"></i>Blvd. Gral. Marcelino García Barragán 1291, Guadalajara.</p></div>
-                <div class="sucursal-map"><iframe src="https://maps.google.com/maps?q=Blvd+Marcelino+Garcia+Barragan+1291,+Guadalajara&output=embed&z=17" allowfullscreen loading="lazy"></iframe></div>
+                <div class="sucursal-map"><iframe src="https://maps.google.com/maps?q=Blvd+Marcelino+Garcia+Barragan+1291,+Guadalajara&output=embed&z=17" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin" title="Mapa sucursal Marcelino García"></iframe></div>
             </div>
         </div>
     </div>
@@ -215,162 +185,162 @@ Código Producción YogiBear 2:46 pm 14 de Mayo 2026
 <footer>
     <div class="footer-logo"><img src="yogilogo.png" alt="YOGI BEAR" class="footer-logo-img"></div>
     <div class="footer-social">
-        <a href="https://www.tiktok.com/@yogibearcam" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@yogibearcam" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/pizzeriaytaqueriayogibear" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1DqyhkSe49/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
     </div>
     <div style="margin-bottom: 20px;">
         <a href="tel:3336173874" class="btn-cta"><i class="fas fa-phone-alt"></i> Haz tu pedido</a>
     </div>
-    <p>© 2026 Yogi Bear – Pizzería & Taquería</p>
+    <p>© 2026 Yogi Bear – Pizzería &amp; Taquería</p>
     <p>Guadalajara, Jalisco · 4 pm a 2 am · Cerrado los Martes</p>
 </footer>
 
 <div class="float-btns">
     <a href="tel:3336173874" class="call-float"><i class="fas fa-phone-alt"></i></a>
-    <a href="https://wa.me/523328081268" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/523328081268" class="wa-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <script>
-    // ── VIDEO ──
-    const video = document.getElementById('video-background');
-    if (video) {
-        video.muted = true;
-        video.defaultMuted = true;
-        const tryPlay = () => { video.muted = true; video.play().catch(() => {}); };
-        tryPlay();
-        setTimeout(tryPlay, 500);
-        setTimeout(tryPlay, 1500);
-        window.addEventListener('scroll', tryPlay, { once: true });
+'use strict';
+
+function esc(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;');
+}
+
+const video = document.getElementById('video-background');
+if (video) {
+    video.muted = true;
+    video.defaultMuted = true;
+    const tryPlay = () => { video.muted = true; video.play().catch(() => {}); };
+    tryPlay();
+    setTimeout(tryPlay, 500);
+    setTimeout(tryPlay, 1500);
+    window.addEventListener('scroll', tryPlay, { once: true });
+}
+
+const ALLOWED_CSV_ORIGIN = 'docs.google.com';
+
+async function fetchCSV(url) {
+    const parsed = new URL(url);
+    if (parsed.hostname !== ALLOWED_CSV_ORIGIN) {
+        throw new Error('Origen no permitido: ' + parsed.hostname);
     }
-
-    // ── FETCH HELPER: sin caché ni del navegador ni de Google ──
-    async function fetchCSV(url) {
-        const bustUrl = url + '&t=' + Date.now();
-        const res = await fetch(bustUrl, {
-            cache: 'no-store',
-            headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
-        });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.text();
-    }
-
-    // ── PARSE CSV respetando comillas y comas dentro de campos ──
-    function parseCSV(text) {
-        const rows = [];
-        const lines = text.split(/\r?\n/);
-        for (const line of lines) {
-            if (!line.trim()) continue;
-            const cols = [];
-            let cur = '', inQ = false;
-            for (let i = 0; i < line.length; i++) {
-                const ch = line[i];
-                if (ch === '"') { inQ = !inQ; }
-                else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
-                else { cur += ch; }
-            }
-            cols.push(cur.trim());
-            rows.push(cols);
-        }
-        return rows;
-    }
-
-    // ── MENÚ ──
-    const MENU_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTXZljNHUvsu37ouRUe3AqCqVpDClZVo_huXolQeUwKkh3pBz8u-TaZxCnLirH4WrOJAvY9siGsC-zZ/pub?output=csv';
-
-    async function loadMenu() {
-        const container = document.getElementById('lista-menu');
-        try {
-            const text = await fetchCSV(MENU_URL);
-            const rows = parseCSV(text);
-            container.innerHTML = '';
-            for (let i = 1; i < rows.length; i++) {
-                const cols = rows[i];
-                if (cols.length < 3 || !cols[0]) continue;
-                const name     = cols[0];
-                const desc     = cols[1] || '';
-                const price    = cols[2] || '';
-                const category = cols[3] || 'Menú';
-                container.innerHTML += `
-                    <div class="menu-item" data-cat="${category.toLowerCase()}">
-                        <span class="categoria">${category}</span>
-                        <h3>${name}</h3>
-                        <p>${desc}</p>
-                        <div class="precio-wrap"><span>$${price}</span></div>
-                    </div>`;
-            }
-            setupFilter();
-        } catch (e) {
-            container.innerHTML = '<p class="loading-msg">Error cargando el menú. Recarga la página.</p>';
-            console.error('Menu error:', e);
-        }
-    }
-
-    function setupFilter() {
-        const select = document.getElementById('menu-filter');
-        const items = document.querySelectorAll('.menu-item');
-        const cats = new Set();
-        items.forEach(item => { if (item.dataset.cat) cats.add(item.dataset.cat); });
-        cats.forEach(cat => {
-            const opt = document.createElement('option');
-            opt.value = cat.toLowerCase();
-            opt.textContent = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
-            select.appendChild(opt);
-        });
-        select.addEventListener('change', () => {
-            const val = select.value;
-            items.forEach(item => {
-                item.classList.toggle('hidden', val !== 'todos' && item.dataset.cat.toLowerCase() !== val);
-            });
-        });
-    }
-
-    // ── RETOS ──
-    const RETOS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT84zmu_VELP8ZmNyoA8McdIrq83ig9Q_nAEtxsCwzzjYKE5J0GHdQiZ9HY1BXYe8y2vmJ9-T36FI_x/pub?output=csv';
-
-    async function loadRetos() {
-        const container = document.getElementById('lista-retos');
-        try {
-            const text = await fetchCSV(RETOS_URL);
-            const rows = parseCSV(text);
-            container.innerHTML = '';
-            for (let i = 1; i < rows.length; i++) {
-                const cols = rows[i];
-                if (!cols[0]) continue;
-                const nombre    = cols[0];
-                const tiempo    = cols[1] || '—';
-                const precio    = cols[2] || '—';
-                const premio    = cols[3] || '—';
-                const modalidad = cols[4] || '—';
-                container.innerHTML += `
-                    <div class="reto-card">
-                        <h3>${nombre}</h3>
-                        <div class="reto-info">
-                            <div class="reto-info-row"><span class="label">⏱ Tiempo</span><span class="val amarillo">${tiempo}</span></div>
-                            <div class="reto-info-row"><span class="label">💸 Si pierdes</span><span class="val rojo">$${precio}</span></div>
-                            <div class="reto-info-row"><span class="label">🏆 Premio</span><span class="val amarillo">$${premio}</span></div>
-                        </div>
-                        <div class="reto-modalidad">📋 ${modalidad}</div>
-                    </div>`;
-            }
-            if (container.children.length === 0) {
-                container.innerHTML = '<p class="loading-msg">No hay retos disponibles.</p>';
-            }
-        } catch (e) {
-            container.innerHTML = '<p class="loading-msg">Error cargando los retos. Recarga la página.</p>';
-            console.error('Retos error:', e);
-        }
-    }
-
-    loadMenu();
-    loadRetos();
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-        });
+    const res = await fetch(url + '&t=' + Date.now(), {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
     });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const ct = res.headers.get('Content-Type') || '';
+    if (!ct.includes('text/')) throw new Error('Content-Type inesperado: ' + ct);
+    return res.text();
+}
+
+function parseCSV(text) {
+    const rows = [];
+    const lines = text.split(/\r?\n/);
+    for (const line of lines) {
+        if (!line.trim()) continue;
+        const cols = [];
+        let cur = '', inQ = false;
+        for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') { inQ = !inQ; }
+            else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+            else { cur += ch; }
+        }
+        cols.push(cur.trim());
+        rows.push(cols);
+    }
+    return rows;
+}
+
+const MENU_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTXZljNHUvsu37ouRUe3AqCqVpDClZVo_huXolQeUwKkh3pBz8u-TaZxCnLirH4WrOJAvY9siGsC-zZ/pub?output=csv';
+
+async function loadMenu() {
+    const container = document.getElementById('lista-menu');
+    try {
+        const rows = parseCSV(await fetchCSV(MENU_URL));
+        container.innerHTML = '';
+        const frag = document.createDocumentFragment();
+        for (let i = 1; i < rows.length; i++) {
+            const c = rows[i];
+            if (c.length < 3 || !c[0]) continue;
+            const name = esc(c[0]), desc = esc(c[1]||''), price = esc(c[2]||''), cat = esc(c[3]||'Menú');
+            const div = document.createElement('div');
+            div.className = 'menu-item';
+            div.dataset.cat = cat.toLowerCase();
+            div.innerHTML = `<span class="categoria">${cat}</span><h3>${name}</h3><p>${desc}</p><div class="precio-wrap"><span>$${price}</span></div>`;
+            frag.appendChild(div);
+        }
+        container.appendChild(frag);
+        setupFilter();
+    } catch (e) {
+        container.innerHTML = '<p class="loading-msg">Error cargando el menú. Recarga la página.</p>';
+        console.error('Menu error:', e);
+    }
+}
+
+function setupFilter() {
+    const select = document.getElementById('menu-filter');
+    const items = document.querySelectorAll('.menu-item');
+    const cats = new Set();
+    items.forEach(item => { if (item.dataset.cat) cats.add(item.dataset.cat); });
+    cats.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.toLowerCase();
+        opt.textContent = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+        select.appendChild(opt);
+    });
+    select.addEventListener('change', () => {
+        const val = select.value;
+        items.forEach(item => item.classList.toggle('hidden', val !== 'todos' && item.dataset.cat.toLowerCase() !== val));
+    });
+}
+
+const RETOS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT84zmu_VELP8ZmNyoA8McdIrq83ig9Q_nAEtxsCwzzjYKE5J0GHdQiZ9HY1BXYe8y2vmJ9-T36FI_x/pub?output=csv';
+
+async function loadRetos() {
+    const container = document.getElementById('lista-retos');
+    try {
+        const rows = parseCSV(await fetchCSV(RETOS_URL));
+        container.innerHTML = '';
+        const frag = document.createDocumentFragment();
+        for (let i = 1; i < rows.length; i++) {
+            const c = rows[i];
+            if (!c[0]) continue;
+            const nombre = esc(c[0]), tiempo = esc(c[1]||''), precio = esc(c[2]||''), premio = esc(c[3]||''), modalidad = esc(c[4]||'');
+            const div = document.createElement('div');
+            div.className = 'reto-card';
+            div.innerHTML = `<h3>${nombre}</h3><div class="reto-info"><div class="reto-info-row"><span class="label">⏱ Tiempo</span><span class="val amarillo">${tiempo}</span></div><div class="reto-info-row"><span class="label">💸 Si pierdes</span><span class="val rojo">$${precio}</span></div><div class="reto-info-row"><span class="label">🏆 Premio</span><span class="val amarillo">${premio}</span></div></div><div class="reto-modalidad">📋 ${modalidad}</div>`;
+            frag.appendChild(div);
+        }
+        if (frag.childElementCount === 0) container.innerHTML = '<p class="loading-msg">No hay retos disponibles.</p>';
+        else container.appendChild(frag);
+    } catch (e) {
+        container.innerHTML = '<p class="loading-msg">Error cargando los retos. Recarga la página.</p>';
+        console.error('Retos error:', e);
+    }
+}
+
+loadMenu();
+loadRetos();
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!/^#[\w-]+$/.test(href) && href !== '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
 </script>
 </body>
 </html>
